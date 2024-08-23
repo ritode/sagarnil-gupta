@@ -9,16 +9,20 @@ const useFadeInOnScroll = (): MutableRefObject<(HTMLElement | null)[]> => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          console.log("Observing entry:", entry); // Log each entry
-          if (entry.isIntersecting || entry.boundingClientRect.top < window.innerHeight) {
+          console.log("Observing entry:", entry);
+
+          if (entry.isIntersecting) {
+            // Add the fade-visible class when the element is in view
             console.log("Element is visible, adding fade-visible:", entry.target);
             entry.target.classList.add('fade-visible');
           } else {
-            console.log("Element is not visible yet:", entry.target);
+            // Remove the fade-visible class when the element is out of view
+            console.log("Element is not visible, removing fade-visible:", entry.target);
+            entry.target.classList.remove('fade-visible');
           }
         });
       },
-      { threshold: 0.4 }
+      { threshold: 0.4 } // Trigger at 40% visibility
     );
 
     // Delay observer attachment slightly to ensure DOM is fully rendered
@@ -35,7 +39,7 @@ const useFadeInOnScroll = (): MutableRefObject<(HTMLElement | null)[]> => {
           }
         }
       });
-    }, 100);
+    }, 100); // Delay for 100ms to ensure DOM is fully rendered
 
     return () => {
       elementsRef.current.forEach((element) => {
