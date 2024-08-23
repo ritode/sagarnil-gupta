@@ -22,7 +22,7 @@ const TimeoutText = () => {
 
     return (
         <div 
-          className={`font-bold text-8xl text-accent-color transition-all ease-in-out duration-500 ${fade ? 'opacity-100' : 'opacity-0'}`}
+          className={`font-bold sm:text-8xl text-6xl text-accent-color transition-all ease-in-out duration-500 ${fade ? 'opacity-100' : 'opacity-0'}`}
         >
             {texts[i]}
         </div>
