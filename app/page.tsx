@@ -15,7 +15,7 @@ export default function Home() {
       </section>
       <section className="lg:flex mb-[111px]">
         <p className="text-text-white lg:w-1/2 text-2xl lg:mb-0 mb-7">Sagarnil Gupta may be a Bengaluru-based visual designer known for user-centric product design and branding. He firmly believes in sleeping with his socks on.</p>
-        <div className="lg:w-1/2 w-64 flex lg:flex-row flex-col items-end justify-end gap-8 text-xl">
+        <div className="lg:w-1/2 sm:w-64 w-44 text-text-gray flex lg:flex-row flex-col items-end justify-end gap-8 text-xl">
           <Link href={'#work'} className=" lg:w-24 p-2 mx-2 hover:font-bold hover:text-accent-color transition-all ease-in-out duration-300 hover:scale-105">01.Work</Link>
           <Link href={'#play'}className=" lg:w-24 p-2 mx-2 hover:font-bold hover:text-accent-color transition-all ease-in-out duration-300 hover:scale-105">02.Play</Link>
           <Link href={'#about'}className=" lg:w-24 p-2 mx-2 hover:font-bold hover:text-accent-color transition-all ease-in-out duration-300 hover:scale-105">03.About</Link>
