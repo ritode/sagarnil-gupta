@@ -11,11 +11,9 @@ const useFadeInOnScroll = (): MutableRefObject<(HTMLElement | null)[]> => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             // in view
-            console.log("Element is visible, adding fade-visible:", entry.target);
             entry.target.classList.add('fade-visible');
           } else {
             // out of view
-            console.log("Element is not visible, removing fade-visible:", entry.target);
             entry.target.classList.remove('fade-visible');
           }
         });
@@ -31,7 +29,6 @@ const useFadeInOnScroll = (): MutableRefObject<(HTMLElement | null)[]> => {
 
           // Already on screen
           if (element.getBoundingClientRect().top < window.innerHeight) {
-            console.log("Element already visible, adding fade-visible:", element);
             element.classList.add('fade-visible');
           }
         }

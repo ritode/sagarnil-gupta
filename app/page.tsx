@@ -11,7 +11,11 @@ export default function Home() {
   return (
     <main className=" bg-bg sm:px-[60px] px-5">
       <header className="w-full sm:py-8 py-3 mb-[68px]">
-        <div className="sm:w-[58px] sm:h-[58px] w-10 h-10 bg-accent-color ml-auto"/>
+        <Image className="sm:w-[58px] sm:h-[58px] w-10 h-10 ml-auto"
+        src={'/images/wave.gif'}
+        alt="waving hand"
+        width={200}
+        height={200}/>
       </header>
       <section className="sm:mb-[200px] sm:h-auto h-screen">
         <p className="text-text-gray text-2xl mb-[40px]">00. facts</p>
