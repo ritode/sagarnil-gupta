@@ -58,7 +58,7 @@ export default function Home() {
         <Link ref={(el) => {
             textRefs.current[7] = el;
           }} className="fade-in" href={'/quilio'}>
-          <div className="bg-[url('/images/quilioBg.png')] bg-cover p-14 mb-10 sm:mb-[80px] h-[600px] flex transition-all ease-in-out duration-300 hover:scale-95 rounded-lg">
+          <div className="bg-[url('/images/quilioBG.png')] bg-cover p-14 mb-10 sm:mb-[80px] h-[600px] flex transition-all ease-in-out duration-300 hover:scale-95 rounded-lg">
             <Image src={'/images/quilio.png'} width={1000} height={1000} alt="quilio" className="object-contain h-full m-auto "/>
           </div></Link>
         <h3 ref={(el) => {
