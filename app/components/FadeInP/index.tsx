@@ -28,7 +28,7 @@ const FadeInP = ({texts, className=''}:Props) => {
     <div className={className}>
     {texts.map((text,index)=><p ref={(el) => {
         textRefs.current[index] = el;
-      }} className='fade-in text-text-white lg:w-1/2 sm:text-2xl text-xl lg:mb-0' dangerouslySetInnerHTML={{ __html: text }}/>)}
+      }} key={index} className='fade-in text-text-white lg:w-1/2 sm:text-2xl text-xl lg:mb-0' dangerouslySetInnerHTML={{ __html: text }}/>)}
       </div>
   )
 }

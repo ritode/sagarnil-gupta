@@ -6,6 +6,8 @@ const useFadeInOnScroll = (): MutableRefObject<(HTMLElement | null)[]> => {
   const elementsRef = useRef<(HTMLElement | null)[]>([]);
 
   useEffect(() => {
+    const currentElements = elementsRef.current; // Store the ref's current value in a local variable
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -23,7 +25,7 @@ const useFadeInOnScroll = (): MutableRefObject<(HTMLElement | null)[]> => {
 
     // Delay observer to ensure DOM is fully rendered
     setTimeout(() => {
-      elementsRef.current.forEach((element) => {
+      currentElements.forEach((element) => {
         if (element) {
           observer.observe(element);
 
@@ -36,7 +38,7 @@ const useFadeInOnScroll = (): MutableRefObject<(HTMLElement | null)[]> => {
     }, 100);
 
     return () => {
-      elementsRef.current.forEach((element) => {
+      currentElements.forEach((element) => {
         if (element) observer.unobserve(element);
       });
     };
