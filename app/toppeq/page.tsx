@@ -76,7 +76,7 @@ const Toppeq = () => {
         <div key={subtext} className="image-container cursor-pointer" onClick={()=>{setShowImage(index)}}>
           <p className='font-light text-text-white text-xl truncate mb-5 w-full'>{subtext}</p>
           <div>
-          <Image src={isMobile?mobileImage: desktopImage} width={1000} height={1000} alt="toppeq" className="responsive-image object-contain h-full m-auto"/>
+          <Image src={desktopImage} width={1000} height={1000} alt="toppeq" className="responsive-image object-contain h-full m-auto"/>
           </div>
         </div>
         ))}

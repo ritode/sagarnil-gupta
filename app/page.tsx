@@ -1,4 +1,5 @@
 'use client'
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import TimeoutText from "./components/TimeoutText";
 import Link from "next/link";
@@ -7,7 +8,7 @@ import dynamic from "next/dynamic";
 import { Banner } from "./components/Banner";
 const FadeInP = dynamic(() => import('./components/FadeInP'), { ssr: false });
 
-const images = [
+const initialImages = [
 '/images/Clients/1.png',
 '/images/Clients/2.png',
 '/images/Clients/3.png',
@@ -18,13 +19,22 @@ const images = [
 '/images/Clients/8.png',
 '/images/Clients/9.png',
 '/images/Clients/10.png',
-].map((image) => ({
-  id: crypto.randomUUID(),
-  image
-}));
-
+];
+interface ImageType {
+  id: string;
+  image: string;
+}
 export default function Home() {
   const textRefs = useFadeInOnScroll();
+  const [images, setImages] = useState<ImageType[]>([]);
+
+  useEffect(() => {
+    const imagesWithIds = initialImages.map((image) => ({
+      id: crypto.randomUUID(),
+      image
+    }));
+    setImages(imagesWithIds);
+  }, []);
   return (
     <main className=" bg-bg sm:px-[60px] px-5">
       <header className="w-full sm:py-8 py-3 mb-[68px]">
@@ -71,6 +81,14 @@ export default function Home() {
           <h2 className=" whitespace-nowrap sm:"><i>01.</i> Work</h2>
         </div>
         <h3 ref={(el) => {
+            textRefs.current[10] = el;
+          }} className=" fade-in sm:text-[40px] text-2xl mb-[20px]"><i>Toppeq</i>- UI/UX strategist</h3>
+        <Link ref={(el) => {
+            textRefs.current[12] = el;
+          }}className="fade-in" href={'/toppeq'}><div className="bg-[#EC821F] bg-cover p-14 mb-10 sm:mb-[80px] h-[600px] flex transition-all ease-in-out duration-300 hover:scale-95 rounded-lg">
+        <Image src={'/images/toppeq.png'} width={1000} height={1000} alt="toppeq" className="object-contain h-full m-auto"/>
+        </div></Link>
+        <h3 ref={(el) => {
             textRefs.current[6] = el;
           }} className="fade-in sm:text-[40px] text-2xl mb-[20px]"><i>Quilio</i>- Product and Visual Design Consultant</h3>
         <Link ref={(el) => {
@@ -89,14 +107,6 @@ export default function Home() {
             <Image src={'/images/healthify.png'} width={1000} height={1000} alt="healthify" className="object-contain h-full m-auto"/>
             </div>
             </Link>
-        <h3 ref={(el) => {
-            textRefs.current[10] = el;
-          }} className=" fade-in sm:text-[40px] text-2xl mb-[20px]"><i>Toppeq</i>- UI/UX strategist</h3>
-        <Link ref={(el) => {
-            textRefs.current[12] = el;
-          }}className="fade-in" href={'/toppeq'}><div className="bg-[#EC821F] bg-cover p-14 mb-10 sm:mb-[80px] h-[600px] flex transition-all ease-in-out duration-300 hover:scale-95 rounded-lg">
-        <Image src={'/images/toppeq.png'} width={1000} height={1000} alt="toppeq" className="object-contain h-full m-auto"/>
-        </div></Link>
         <h3 ref={(el) => {
             textRefs.current[13] = el;
           }} className=" fade-in sm:text-[40px] text-2xl mb-[20px]"><i>Freelance</i> Projects- Max freedom. Unlimited possibilites</h3>
