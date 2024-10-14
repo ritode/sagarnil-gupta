@@ -1,0 +1,37 @@
+.banner-image {
+    max-width: 150px;
+    height: 5rem;
+    padding: 0 30px;
+    object-fit: cover;
+  }
+  
+  .banner-image img:last-of-type {
+    padding-left: 0;
+  }
+  
+  .banner-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 5rem;
+  }
+  
+  .banner-wrapper {
+    position: absolute;
+    display: flex;
+  }
+  
+  .banner-section {
+    display: flex;
+    animation: swipe var(--speed) linear infinite backwards;
+  }
+  
+  @keyframes swipe {
+    0% {
+      transform: translate(0);
+    }
+  
+    100% {
+      transform: translate(-100%);
+    }
+  }

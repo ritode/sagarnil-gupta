@@ -4,7 +4,24 @@ import TimeoutText from "./components/TimeoutText";
 import Link from "next/link";
 import useFadeInOnScroll from "./hooks/useFadeInOnScroll";
 import dynamic from "next/dynamic";
+import { Banner } from "./components/Banner";
 const FadeInP = dynamic(() => import('./components/FadeInP'), { ssr: false });
+
+const images = [
+'/images/Clients/1.png',
+'/images/Clients/2.png',
+'/images/Clients/3.png',
+'/images/Clients/4.png',
+'/images/Clients/5.png',
+'/images/Clients/6.png',
+'/images/Clients/7.png',
+'/images/Clients/8.png',
+'/images/Clients/9.png',
+'/images/Clients/10.png',
+].map((image) => ({
+  id: crypto.randomUUID(),
+  image
+}));
 
 export default function Home() {
   const textRefs = useFadeInOnScroll();
@@ -42,6 +59,9 @@ export default function Home() {
             textRefs.current[4] = el;
           }} href={'#resume'}className="fade-in lg:w-24 p-2 mx-2 hover:font-bold hover:text-accent-color transition-all ease-in-out duration-300 hover:scale-105">04.Resume</Link>
         </div>
+      </section>
+      <section className="my-[68px]">
+        <Banner images={images} speed={20000}/>
       </section>
       <section className="my-[68px]">
         <div ref={(el) => {
@@ -98,10 +118,9 @@ export default function Home() {
           <h2 className=" whitespace-nowrap text-2xl"><i>XX</i> - Socials</h2>
           </div>
           <div className="text-xl flex md:flex-row flex-col items-center justify-between px-24 pb-20">
-            <a className="md:w-24 p-2 mx-2 hover:font-bold hover:text-accent-color transition-all ease-in-out duration-300 hover:scale-105">Facebook</a>
-            <a className="md:w-24 p-2 mx-2 hover:font-bold hover:text-accent-color transition-all ease-in-out duration-300 hover:scale-105">Instagram</a>
-            <a className="md:w-24 p-2 mx-2 hover:font-bold hover:text-accent-color transition-all ease-in-out duration-300 hover:scale-105">LinkedIn</a>
-            <a className="md:w-24 p-2 mx-2 hover:font-bold hover:text-accent-color transition-all ease-in-out duration-300 hover:scale-105">Discord</a>
+            <Link className="md:w-24 p-2 mx-2 hover:font-bold hover:text-accent-color transition-all ease-in-out duration-300 hover:scale-105" href={''}>Instagram</Link>
+            <Link className="md:w-24 p-2 mx-2 hover:font-bold hover:text-accent-color transition-all ease-in-out duration-300 hover:scale-105" href={''}>LinkedIn</Link>
+            <Link className="md:w-24 p-2 mx-2 hover:font-bold hover:text-accent-color transition-all ease-in-out duration-300 hover:scale-105" href={''}>Discord</Link>
           </div>
           </section>
     </main>

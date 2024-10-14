@@ -1,0 +1,38 @@
+.image-container {
+    flex: 1 1 100%;
+    max-width: 100%;
+    display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+  }
+  
+  .responsive-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  @media (min-width: 768px) {
+    .image-container {
+      flex: 1 1 calc(33.333% - 40px); /* Adjust the width for larger screens */
+      max-width: calc(33.333% - 40px);
+    }
+  }
+  @media (max-width: 768px) {
+    .responsive-image{
+        width: 100%;
+      }
+  }
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.8); /* Darker background for better visibility */
+  }
+  
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
