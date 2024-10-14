@@ -23,7 +23,7 @@ const FadeInP = ({texts, className=''}:Props) => {
     !isSmallScreen?
         <p ref={(el) => {
             textRefs.current[0] = el;
-          }} className="fade-in text-text-white lg:w-1/2 text-2xl lg:mb-0 mb-7">Sagarnil Gupta may be a Bengaluru-based visual designer known for user-centric product design and branding. He firmly believes in sleeping with his socks on.</p>:
+          }} className="fade-in text-text-white lg:w-1/2 text-2xl lg:mb-0 mb-7">Sagarnil Gupta may be a Bengaluru-based visual designer known for user-centric product design and branding.</p>:
         
     <div className={className}>
     {texts.map((text,index)=><p ref={(el) => {

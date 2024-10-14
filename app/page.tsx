@@ -42,9 +42,7 @@ export default function Home() {
       <section className="lg:flex mb-[111px]">
       <FadeInP className="mb-7" texts={
           ['<i>Sagarnil Gupta</i> may be a Bengaluru-based visual designer',
-          'known for <i>user-centric product design</i> and',
-          '<i>branding</i>. He firmly believes in sleeping',
-          'with his socks on.']}/>
+          'known for <i>user-centric product design</i> and <i>branding</i>.']}/>
         <div className="lg:w-1/2 sm:w-64 w-44 text-text-gray flex lg:flex-row flex-col items-end justify-end gap-8 text-xl">
           <Link ref={(el) => {
             textRefs.current[1] = el;
