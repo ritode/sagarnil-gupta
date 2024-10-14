@@ -35,6 +35,11 @@ const Toppeq = () => {
         .then(response => response.json())
         .then(data => setImageCount(data.count))
         .catch(error => console.error('Error fetching image count:', error));
+      // Disable scrolling on the body
+      document.body.style.overflow = 'hidden';
+    } else {
+      // Enable scrolling on the body
+      document.body.style.overflow = 'auto';
     }
   }, [showImage]);
 
@@ -77,7 +82,7 @@ const Toppeq = () => {
             <div key={subtext} className="image-container cursor-pointer" onClick={()=>{setShowImage(index)}}>
               <p className='font-light text-text-white text-xl truncate mb-5 w-full'>{subtext}</p>
               <div>
-                <Image src={isMobile?mobileImage: desktopImage} width={1000} height={1000} alt="toppeq" className="responsive-image object-contain h-full m-auto"/>
+                <Image src={desktopImage} width={1000} height={1000} alt="toppeq" className="responsive-image object-contain h-full m-auto"/>
               </div>
             </div>
           ))}
@@ -94,7 +99,7 @@ const Toppeq = () => {
             </button>
             {imageCount > 1 && (
               <button
-                className='absolute sm:left-8 left-[40%] bottom-0 sm:top-1/2 transform -translate-y-1/2 text-white text-2xl'
+                className='absolute sm:left-8 left-[40%] bottom-2 sm:top-1/2 transform -translate-y-1/2 text-white text-2xl'
                 onClick={handlePrevImage}
                 disabled={currentImageIndex === 0}
               >
@@ -110,7 +115,7 @@ const Toppeq = () => {
             />
             {imageCount > 1 && (
               <button
-                className='absolute sm:right-8 sm:top-1/2 right-[40%] bottom-0 transform -translate-y-1/2 text-white text-2xl'
+                className='absolute sm:right-8 sm:top-1/2 right-[40%] bottom-2 transform -translate-y-1/2 text-white text-2xl'
                 onClick={handleNextImage}
               >
                 &gt;
