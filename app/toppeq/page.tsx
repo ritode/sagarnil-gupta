@@ -89,14 +89,14 @@ const Toppeq = () => {
               className='absolute top-0 right-0 m-4 text-white text-2xl'
               onClick={handleCloseOverlay}
             >
-              &times;
+              '&times;'
             </button>
             {imageCount>1&&<button
               className='absolute sm:left-8 left-[40%] bottom-0 sm:top-1/2 transform -translate-y-1/2 text-white text-2xl'
               onClick={handlePrevImage}
               disabled={currentImageIndex === 0}
             >
-              &lt;
+              '&lt;'
             </button>}
             <Image
               src={`/images/toppeq/${showImage + 1}/${currentImageIndex + 1}.png`}
@@ -109,7 +109,7 @@ const Toppeq = () => {
               className='absolute sm:right-8 sm:top-1/2 right-[40%] bottom-0 transform -translate-y-1/2 text-white text-2xl'
               onClick={handleNextImage}
             >
-              &gt;
+              '&gt;'
             </button>}
           </div>
         </div>
